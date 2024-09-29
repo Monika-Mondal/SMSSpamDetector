@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Draggable Form</title>
+    <link rel="stylesheet" href="{% static 'spam/css/Form.css' %}">
+    <style>
+        section {
+            background-image: url("{% static 'spam/images/bg.avif' %}");
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <!-- Header part start-->
+        <header>
+            <nav>
+                <div><a href="#" class="brand">SPD</a></div>
+                <ul>
+                    <li><a href="web app" class="active">WEB APP</a></li>
+                    <li><a href="mail.html" class="active">EMAILS</a></li>
+                    <li><a href="#" class="active"><i class="fa-solid fa-envelope" style="color: #fff;"></i></a></li>
+                    <li><a href="#" class="active"><i class="fa-solid fa-right-from-bracket"></i></a></li>
+                </ul>
+            </nav>
+        </header>
+    
+        <button class="openbtn" onclick="toggleForm()">Open Form</button>
+
+        <div class="draggable-form" id="draggableForm">
+            <div class="form-header">
+                <span class="form-title">Compose Mail</span>
+                <button class="form-btn minimize-btn" onclick="minimizeForm()">_</button>
+                <button class="form-btn maximize-btn" onclick="maximizeForm()">[]</button>
+                <button class="form-btn close-btn" onclick="closeForm()">×</button>
+            </div>
+            <form>
+                <label for="recipient">To:</label>
+                <input type="email" id="recipient" name="recipient" required>
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject" required>
+                <label for="body">Message:</label>
+                <textarea id="body" name="body" rows="4" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </section>
+
+    <script src="{% static 'spam/js/Form.js' %}"></script>
+</body>
+</html>
